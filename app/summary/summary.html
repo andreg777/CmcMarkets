@@ -1,0 +1,29 @@
+<div layout="row" layout-align="space-between center">
+    <h1>Summary</h1>
+</div>
+
+<div layout="column" flex="50">
+
+    <div ng-repeat="item in viewModel.items track by $index" layout="column" layout-margin>
+        <div layout="row">
+            {{item.name}}
+            {{item.price}}
+        </div>
+        <md-divider></md-divider>
+    </div>
+    <div layout-margin layout="row">
+        {{viewModel.deliveryOption.type}}
+        {{viewModel.deliveryOption.price}}
+    </div>  
+
+    <div>
+        Total: {{viewModel.total()}}
+    </div>
+
+    <div layout-align="end center" ng-click="purchase()">
+        <md-button class="md-primary md-raised">Purchase</md-button>
+    </div>
+</div>
+
+
+

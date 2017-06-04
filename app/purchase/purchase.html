@@ -1,0 +1,14 @@
+
+<div layout="row" layout-align="space-between center">
+    <h1>Purchase</h1>
+    <a href="#checkout">Checkout</a>
+    <span layout-margin ng-if="viewModel.basketItems().length >= 1">Items in basket {{viewModel.basketItems().length}}</span>
+</div>
+<md-divider></md-divider>
+<div layout-wrap layout="row">
+    <div class="md-whiteframe-4dp" ng-repeat="item in viewModel.items" flex="30" layout-margin layout="column">
+        <md-subheader class="md-primary md-no-sticky">{{item.name}}</md-subheader>
+        <img />
+        <md-button class="md-primary md-raised" ng-click="purchase(item)">Purchase</md-button>
+    </div>
+</div>

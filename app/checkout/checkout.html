@@ -1,0 +1,23 @@
+
+<div layout="row" layout-align="space-between center">
+    <h1>Checkout</h1>
+</div>
+
+<md-divider></md-divider>
+
+<div layout-wrap layout="column">
+    <div>
+        <md-subheader class="md-primary md-no-sticky">Please select delivery option</md-subheader>
+
+        <md-radio-group ng-model="viewModel.deliveryOption" layout="column" flex layout-margin>
+            <md-radio-button ng-repeat="deliveryOption in viewModel.deliveryOptions" value="{{deliveryOption.type}}">
+                <b>{{deliveryOption.type}}</b>
+                <span flex></span>
+                <span>{{deliveryOption.price}}</span>
+            </md-radio-button>
+        </md-radio-group>        
+    </div>
+    <div layout="row" layout-align="end center">
+        <md-button ng-if="viewModel.deliveryOption != null" class="md-primary md-raised" ng-click="checkout()">Checkout</md-button>
+    </div>
+</div>

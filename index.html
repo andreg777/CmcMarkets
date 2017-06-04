@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title></title>
+    <link href="css/site.css" rel="stylesheet" />
+    <link href="css/angular-material.css" rel="stylesheet" />
+
+
+    <script type="text/javascript" src="lib/angular.js"></script>
+    <script type="text/javascript" src="lib/angular-animate.js"></script>
+    <script type="text/javascript" src="lib/angular-aria.js"></script>
+    <script type="text/javascript" src="lib/angular-material.js"></script>
+    <script type="text/javascript" src="lib/moment.min.js"></script>
+    <script type="text/javascript" src="lib/angular-route.js"></script>
+</head>
+<body ng-app="cmcMarkets">
+
+    <script type="text/javascript" src="app/app.js"></script>
+    <script type="text/javascript" src="app/routeProvider.js"></script>
+
+    <script type="text/javascript" src="app/indexCtrl.js"></script>
+
+    <script type="text/javascript" src="app/purchase/purchase.js" ></script>
+    <script type="text/javascript" src="app/purchase/purchaseCtrl.js"></script>
+    
+    <script type="text/javascript" src="app/checkout/checkout.js" ></script>
+    <script type="text/javascript" src="app/checkout/checkoutCtrl.js" ></script>
+
+    <script type="text/javascript" src="app/summary/summary.js" ></script>
+    <script type="text/javascript" src="app/summary/summaryCtrl.js" ></script>
+   
+    <script type="text/javascript" src="app/thankyou/thankyou.js" ></script>
+    <script type="text/javascript" src="app/thankyou/thankyouCtrl.js" ></script>
+   
+    <script type="text/javascript" src="app/data.js"></script>
+    <script type="text/javascript" src="app/basket.js"></script>
+    
+    <div ng-controller="indexCtrl">
+        <div ng-view>
+        </div>
+    </div>
+</body>
+</html>
