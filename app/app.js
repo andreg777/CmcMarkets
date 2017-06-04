@@ -25,6 +25,10 @@ cmcMarkets.config(function ($routeProvider, $locationProvider) {
             templateUrl: 'app/summary/summary.html',
             controller: 'summaryCtrl'
         })
+        .when('/thankyou', {
+            templateUrl: 'app/thankyou/thankyou.html',
+            controller: 'thankyouCtrl'
+        })
         .otherwise({
             redirectTo: '/purchase'
         });
