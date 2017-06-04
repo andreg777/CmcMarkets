@@ -32,6 +32,5 @@ cmcMarkets.factory('checkout', function (basket,$location,$window) {
             $window.history.back();
         }
     };
-
     return service;
 });
