@@ -10,14 +10,15 @@
         <md-subheader class="md-primary md-no-sticky">Please select delivery option</md-subheader>
 
         <md-radio-group ng-model="viewModel.deliveryOption" layout="column" flex layout-margin>
-            <md-radio-button ng-repeat="deliveryOption in viewModel.deliveryOptions" value="{{deliveryOption.type}}">
+            <md-radio-button ng-repeat="deliveryOption in viewModel.deliveryOptions" ng-value="{{deliveryOption}}">
                 <b>{{deliveryOption.type}}</b>
                 <span flex></span>
-                <span>{{deliveryOption.price}}</span>
+                <span>{{deliveryOption.price | currency}}</span>
             </md-radio-button>
         </md-radio-group>        
     </div>
-    <div layout="row" layout-align="end center">
+    <div layout="row" layout-align="space-between center">
+        <md-button class="md-primary md-raised" ng-click="back()">Back</md-button>
         <md-button ng-if="viewModel.deliveryOption != null" class="md-primary md-raised" ng-click="checkout()">Checkout</md-button>
     </div>
 </div>

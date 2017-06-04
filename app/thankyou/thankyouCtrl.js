@@ -1,3 +1,3 @@
 cmcMarkets.controller('thankyouCtrl', function ($scope,thankyou) {
-    //$scope.viewModel = summary.getViewModel();
+    $scope.done = thankyou.done.bind(thankyou);
 });

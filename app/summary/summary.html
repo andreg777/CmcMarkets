@@ -2,12 +2,11 @@
     <h1>Summary</h1>
 </div>
 
-<div layout="column" flex="50">
-
+<div layout="column">
     <div ng-repeat="item in viewModel.items track by $index" layout="column" layout-margin>
         <div layout="row">
             {{item.name}}
-            {{item.price}}
+            {{item.price | currency}}
         </div>
         <md-divider></md-divider>
     </div>
@@ -17,11 +16,14 @@
     </div>  
 
     <div>
-        Total: {{viewModel.total()}}
+        <md-subheader class="md-primary md-no-sticky">
+            Total: {{viewModel.total | currency}}
+        </md-subheader>
     </div>
 
-    <div layout-align="end center" ng-click="purchase()">
-        <md-button class="md-primary md-raised">Purchase</md-button>
+    <div layout="row" layout-align="space-between center">
+        <md-button class="md-primary md-raised" ng-click="back()">Back</md-button>
+        <md-button class="md-primary md-raised" ng-click="purchase()">Purchase</md-button>
     </div>
 </div>
 

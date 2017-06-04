@@ -1,4 +1,4 @@
-cmcMarkets.factory('checkout', function (basket,$location) {
+cmcMarkets.factory('checkout', function (basket,$location,$window) {
 
     var service = {
         viewModel: {
@@ -10,13 +10,13 @@ cmcMarkets.factory('checkout', function (basket,$location) {
                 deliveryOption: basket.deliveryOption,
                 deliveryOptions:[{
                     type:  'Mail',
-                    price: '$5.00'},
+                    price: 5.00},
                     {type: 'Bicycle',
-                    price: '$15.00'},
+                    price: 15.00},
                     {type: 'Pidgeon',
-                    price: '$20.00'},
+                    price: 20.00},
                     {type: 'Drone',
-                    price: '$25.00'},                    
+                    price: 25.00},                    
                 ]                
             };
 
@@ -26,6 +26,10 @@ cmcMarkets.factory('checkout', function (basket,$location) {
         checkout: function(){
             basket.deliveryOption = service.viewModel.deliveryOption;
             $location.path('/summary');
+        },
+
+        back: function(){
+            $window.history.back();
         }
     };
 
