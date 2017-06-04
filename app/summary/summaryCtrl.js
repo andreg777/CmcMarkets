@@ -3,4 +3,5 @@ cmcMarkets.controller('summaryCtrl', function ($scope,summary) {
     $scope.purchase = summary.purchase.bind(summary)
     $scope.back = summary.back.bind(summary);
     $scope.total = summary.total.bind(summary);
+    $scope.remove = summary.remove.bind(summary);
 });

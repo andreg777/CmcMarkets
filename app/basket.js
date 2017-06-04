@@ -8,7 +8,11 @@ cmcMarkets.factory('basket', function () {
             service.store.push(item);
         },
         removeFromBasket: function(item){
-            service.store.remove(item);
+            var index = service.store.indexOf(item);
+            if(index == -1){
+                return;
+            }
+            service.store.splice(index,1);
         },
         total: function(){
             var total = 0;

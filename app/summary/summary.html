@@ -3,19 +3,25 @@
 </div>
 
 <div layout="column">
+
     <div ng-repeat="item in viewModel.items track by $index" layout="column" layout-margin>
-        <div layout="row">
+        <div layout="row" layout-align="space-between center">
             {{item.name}}
             {{item.price | currency}}
+            <md-button ng-click="remove(item)" class="md-primary md-raised">Remove</md-button>
         </div>
         <md-divider></md-divider>
     </div>
-    <div layout-margin layout="row">
+    
+    <md-subheader ng-if="viewModel.hasItems == false" class="md-warn md-no-sticky">No items in basket</md-subheader>
+
+    <div layout-margin layout="row" ng-if="viewModel.items.length >= 1">
+        Delivery option: 
         {{viewModel.deliveryOption.type}}
-        {{viewModel.deliveryOption.price}}
+        {{viewModel.deliveryOption.price | currency}}
     </div>  
 
-    <div>
+    <div ng-if="viewModel.hasItems">
         <md-subheader class="md-primary md-no-sticky">
             Total: {{viewModel.total | currency}}
         </md-subheader>
@@ -23,9 +29,6 @@
 
     <div layout="row" layout-align="space-between center">
         <md-button class="md-primary md-raised" ng-click="back()">Back</md-button>
-        <md-button class="md-primary md-raised" ng-click="purchase()">Purchase</md-button>
+        <md-button class="md-primary md-raised" ng-click="purchase()" ng-if="viewModel.hasItems == true">Purchase</md-button>
     </div>
 </div>
-
-
-
